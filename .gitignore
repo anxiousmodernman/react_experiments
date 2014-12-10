@@ -1,7 +1,20 @@
+# IDE files
+.idea
+*sublime-*
+
+# Build dirs and package dirs
 node_modules/
 app/bower_components/
+bower_components
 dist/
 .sass-cache/
+
+# Configs
 .bowerrc
 .jshintrc
 .un~
+
+# Junk
+*.swp
+*.log
+*~

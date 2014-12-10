@@ -108,7 +108,7 @@ gulp.task('serve', function () {
 
 // Bower helper
 gulp.task('bower', function() {
-    gulp.src('app/bower_components/**/*.js', {base: 'app/bower_components'})
+    gulp.src('bower_components/**/*.js')
         .pipe(gulp.dest('dist/bower_components/'));
 
 });
