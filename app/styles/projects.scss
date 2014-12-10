@@ -1,3 +1,4 @@
+
 .square {
     width:100px;
     height: 100px;
@@ -7,14 +8,12 @@
 }
 
 
-.sqaure.sqaure-click {
-
+.blue-click {
+  transition: background-color .5s ease-in;
   background-color: blue;
-  transform: background-color .5s ease-in;
-
 }
 
-.sqaure-container {
+.square-container {
 
     width: 1000px;
     height: 100px;

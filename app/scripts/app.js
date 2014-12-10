@@ -34,6 +34,6 @@ var ProjectContainer = React.createClass({
             </div>
             )
     }
-})
+});
 
 React.render(<Projects />, document.getElementById('projects'));
