@@ -8,28 +8,28 @@ var Slider = React.createClass({
 
     getInitialState: function() {
 
-        var squares = this.createSqaures(5)
+        var squares = this.createSquares(5);
         return {squares: squares}
 
     },
 
 
-    createSqaures: function(counter) {
+    createSquares: function(counter) {
 
         var squares = [];
         for (var i=0; i<=counter; i++) {
 
-            var temp = (<Square key={i}/>)
+            var temp = (<Square key={i}/>);
             squares.push(temp);
-        };
+        }
 
-        console.log(squares);
+        //console.log(squares);
         return squares
     },
 
     handleChange: function(e) {
 
-        var squares = this.createSqaures(e.target.value);
+        var squares = this.createSquares(e.target.value);
         this.setState({squares: squares});
     },
 

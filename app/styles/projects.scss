@@ -7,14 +7,14 @@
 }
 
 
-.sqaure.sqaure-click {
+.square.square-click {
 
-  background-color: blue;
   transform: background-color .5s ease-in;
+  background-color: blue;
 
 }
 
-.sqaure-container {
+.square-container {
 
     width: 1000px;
     height: 100px;
@@ -64,7 +64,7 @@
   background-color: #DCDCDC;
 }
 
-.contrainer {
+.container {
 
   margin-top: 200px;
   margin-bottom: 200px;
@@ -77,3 +77,28 @@
 }
 
 
+.container.tool {
+  border: 1px solid black;
+}
+
+.album-details {
+  font-size: 1.3em;
+}
+
+.album-enter {
+  max-height: 10px;
+  transition: max-height .5s ease-in;
+}
+
+.album-enter.album-enter-active {
+  max-height: 100px;
+}
+
+.album-leave {
+  max-height: 100px;
+  transition: max-height .5s ease-in;
+}
+
+.album-leave.album-leave-active {
+  max-height: 0;
+}
