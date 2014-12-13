@@ -41,7 +41,6 @@ var Conway = React.createClass({
     componentWillMount: function() {
         this.createGenerationZero()
 
-
     },
 
     componentDidMount: function() {
@@ -74,7 +73,7 @@ var Conway = React.createClass({
         //set some state
         setTimeout(function(){
             self.createNextGeneration();
-            var x = self.state.generation += 1
+            var x = self.state.generation += 1;
             self.setState({generation: x});
             window.requestAnimationFrame(self.generate);
         }, 1000 / fps);
@@ -99,81 +98,81 @@ var Conway = React.createClass({
 
                 //top left
                 if (i == min && j == min) {
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
 
                 }
                 //top right
                 else if (i == min && j == max) {
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
                 //bottom left
                 else if (i == max && j == min) {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
                 //bottom right
                 else if (i == max && j == max) {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
                 //top row
                 else if (i == min && j != max ) {
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
                 //bottom row
                 else if (i == max && j != min) {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
                 //left most column
                 else if (j == min && i != min && i != max ) {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
 
                 }
                 //left right column
                 else if (j == max && i != max && i != max) {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
 
                 }
                 //the rest of the other cells
                 else {
-                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0
-                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0
+                    aliveNeighboors += this.currentGeneration[i-1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j-1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i-1][j+1] ? 1 : 0;
+                    aliveNeighboors += this.currentGeneration[i+1][j+1] ? 1 : 0;
                     nextGeneration[i][j] = this._nextGenCell(currentCell, aliveNeighboors)
                 }
 
@@ -189,11 +188,11 @@ var Conway = React.createClass({
     _nextGenCell: function(currentCell, aliveNeighboors) {
         //if alive
         if(currentCell) {
-            if (aliveNeighboors < 2) return 0
-            if (aliveNeighboors > 3) return 0
+            if (aliveNeighboors < 2) return 0;
+            if (aliveNeighboors > 3) return 0;
             if (aliveNeighboors >= 2 && aliveNeighboors <= 3) return 1
         } else {
-             if (aliveNeighboors == 3) return 1
+             if (aliveNeighboors == 3) return 1;
 
         }
 
@@ -201,7 +200,7 @@ var Conway = React.createClass({
 
 
     createNextGeneration: function() {
-        //perform the algorithim for conways
+        //perform the algorithm for conways
         var nextGeneration = this._performConwayRules();
         this.currentGeneration = nextGeneration;
         //set new cells

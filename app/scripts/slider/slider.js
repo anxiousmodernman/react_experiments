@@ -2,6 +2,7 @@
 
 var React = require('react');
 var CSSTransitionGroup = React.addons.CSSTransitionGroup;
+var cx = React.addons.classSet;
 
 
 var Slider = React.createClass({
@@ -75,7 +76,12 @@ var Square = React.createClass({
     },
 
     render: function() {
-        return (<div className="square"
+        var classes = cx({
+            'square': true,
+            'blue-click': this.state.clicked
+        });
+
+        return (<div className={classes}
                     onClick={this.handleClick}>
                 </div>)
     }

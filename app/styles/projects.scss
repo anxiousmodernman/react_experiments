@@ -1,3 +1,4 @@
+
 .square {
     width:100px;
     height: 100px;
@@ -7,6 +8,9 @@
 }
 
 
+.blue-click {
+  transition: background-color .5s ease-in;
+  background-color: blue;
 .square.square-click {
 
   transform: background-color .5s ease-in;
